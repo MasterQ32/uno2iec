@@ -8,10 +8,15 @@ QT       += core gui serialport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = rpi2iec
+TARGET = uno2iec
 TEMPLATE = app
 
 DEFINES += CONSOLE_DEBUG
+
+
+# target.path = $(PREFIX)
+target.path = "$${PREFIX}/bin"
+INSTALLS += target
 
 win32-msvc* {
 	# Multiple build processes with jom
@@ -125,7 +130,6 @@ OTHER_FILES += \
 
 RESOURCES += \
 				resources.qrc
-
 
 
 # we want intermediate build files stored in configuration and platform specific folders.
